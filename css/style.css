@@ -1,0 +1,390 @@
+/*css reset*/
+body {
+    font-family: "Microsoft YaHei", "SimHei", sans-serif;
+    font-size: 62.5%;
+}
+/* for IE/Win */
+html{
+    height: 100%;
+}
+html>body {
+    font-size: 10px;
+    height: 100%;
+}
+
+/* for everything else */
+
+/*字体边框等初始化*/
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+    padding: 0;
+    margin: 0;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+fieldset,img {
+    border: 0;
+}
+img {
+    display: block;
+}
+address,caption,cite,code,dfn,th,var {
+    font-weight: normal;
+    font-style: normal;
+}
+ol,ul {
+    list-style: none;
+}
+caption,th {
+    text-align: left;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-weight: normal;
+    font-size: 100%;
+}
+q:before,q:after {
+    content: '';
+}
+abbr,acronym {
+    border: 0;
+}
+a {
+    color: #343434;
+    text-decoration: none;
+}
+a:hover {
+    color: #b60a0a;
+}
+input{
+    outline:medium;
+}
+/*清除浮动*/
+.clearfix:after {
+    content: " ";
+    display: block;
+    clear: both;
+    height: 0;
+}
+.clearfix {
+    zoom: 1;
+}
+/************************************/
+body{
+    font-family: "Microsoft YaHei",sans-serif;
+    background-color: #333;
+}
+/*旋转地球动画*/
+#echarts-x-content{
+    width: 100%;
+    height: 100%;
+}
+.pt-page-2{
+    position: relative;
+    min-width:1360px;
+}
+
+/*左边部分*/
+.left-container {
+    margin: 10px 0 0 10px;
+}
+.left-content section{
+    /*width: 250px;*/
+    height: 200px;
+    background-color: rgba(6,72,72,0.5);
+    margin-bottom:5px;
+    border-radius: 5px;
+}
+.left-container .left-top{
+    height:300px;
+    position: relative;
+    /*padding-top:21px;*/
+}
+.left-top-text {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    display: none;
+}
+.left-top-text p{
+    color: #89F8E2;
+    font-size: 14px;
+}
+#radar-chart {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 21px;
+}
+.left-container .left-mid{
+    height: 146px;
+}
+.left-container .left-bottom{
+    height: 185px;
+}
+.left-content section.left-bottom{
+    margin-bottom:0;
+}
+/*左侧中间位置*/
+.left-mid{
+    overflow: hidden;
+    text-align: center;
+    padding: 10px 0;
+}
+.left-mid p{
+    color: #89F8E2;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+.left-mid ul{
+    margin-bottom:0;
+    margin-top: 13px;
+}
+.left-mid ul li{
+    max-width:74%;
+    margin: 0 auto;
+}
+.left-bottom-text p{
+    margin-bottom:0;
+    color: #89F8E2;
+    font-size:14px;
+}
+.left-bottom-text{
+    margin:5px 0 0 10px;
+}
+.left-bottom-scroll{
+    margin-top: 5px;
+    height: 62%;
+    overflow: hidden;
+}
+.left-bottom-scroll ul li {
+    font-size: 14px;
+    color: #89F8E2;
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+
+
+/*中间车辆*/
+.car-container {
+    position: relative;
+    margin-right:-10px;
+}
+.car-user{
+    width: 330px;
+    padding: 10px 10px 0;
+    border-radius: 5px;
+    margin-top:10px;
+    background-color: rgba(6,72,72,0.5);
+    position: absolute;
+}
+.car-user img{
+    width: 34%;
+    float: left;
+}
+.car-user ul{
+    float: left;
+    margin: 10px 0 0 30px;
+}
+.car-user ul p{
+    font-size: 16px;
+    color: #89F8E2;
+    text-align: left;
+}
+.car-charts {
+    position: absolute;
+    left: 59%;
+    top: 10px;
+}
+.car-charts div{
+    width: 150px;
+    height: 150px;
+    float: left;
+}
+#car-charts2{
+    margin-left: -23px;
+}
+.car-content{
+    margin-top: 208px;
+    position: relative;
+    left: 5%;
+}
+#myCar {
+    width: 660px;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.car-bottom {
+    margin-top: -56px;
+    position: relative;
+    z-index: 1000;
+}
+.car-bottom-text{
+    width: 65%;
+    height: 200px;
+    background-color: rgba(6,72,72,0.5);
+    float: left;
+    overflow: hidden;
+}
+#car-bottom-board {
+    width: 34%;
+    height: 200px;
+    background-color: #fff;
+    float: left;
+}
+.car-content-text{
+    height: 90%;
+    margin: 10px 0;
+}
+.car-content-text ul{
+    margin: 10px 0;
+}
+.car-content-text li{
+    color: #89F8E2;
+    font-size: 14px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+/*浮动信息*/
+.car-content p{
+    /*width: 100px;*/
+    position: absolute;
+}
+.car-content p {
+    font-size: 18px;
+    color: #89F8E2;
+    text-align: center;
+    background-color: rgba(13,128,230,0.6);
+    padding:5px;
+}
+.car-content p:after{
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 16px 12.5px 0 12.5px;
+    border-color: rgba(13,128,230,0.6) transparent transparent transparent;
+    position: absolute;
+    top: 35px;
+    right: 9px;
+}
+.car-content section + p{
+    left: -5%;
+    top: 40%;
+}
+.car-content p:nth-child(3) {
+    left:9%;
+    top: 0;
+}
+.car-content p:nth-child(4){
+    left:49%;
+    top: -18%;
+}
+.car-content p:nth-child(4):after{
+    left: 10px;
+}
+.car-content p:nth-child(5){
+    left: 70%;
+    top: 25%;
+}
+.car-content p:nth-child(5):after{
+    left: 10px;
+}
+.car-content p:last-child {
+    left: 59%;
+    top: 59%;
+}
+.car-content p:last-child:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 12.5px 16px 12.5px;
+    border-color: transparent transparent rgba(13,128,230,0.6) transparent;
+    position: absolute;
+    bottom: 35px;
+    left:10px;
+}
+.car-content p:last-child:after{
+    content: '';
+    border: none;
+}
+
+/*右边部分*/
+.right-container {
+    margin-top: 10px;
+}
+.right-content section{
+    background-color: rgba(6,72,72,0.5);
+    border-radius: 5px;
+}
+.right-container section.car-user{
+    margin-left:0;
+    padding: 0;
+    height: auto;
+}
+.right-container .right-bottom img{
+    width:50%;
+    float: left;
+    padding: 5px 0 5px 5px;
+}
+.right-container section.right-bottom ul{
+
+}
+#right-top{
+    height: 437px;
+}
+/*.right-bottom{*/
+    /*position: static;*/
+    /*margin-bottom:0;*/
+/*}*/
+.right-bottom{
+    padding: 5px;
+    border-radius: 5px;
+    margin-top:5px;
+    background-color: rgba(6,72,72,0.5);
+}
+.right-bottom ul{
+    float: left;
+    margin: 5px 0 0 5px;
+}
+.right-bottom li{
+    margin-bottom: 15px;
+}
+.right-bottom ul p{
+    font-size: 16px;
+    color: #89F8E2;
+    text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
