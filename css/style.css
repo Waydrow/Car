@@ -75,6 +75,12 @@ body{
     font-family: "Microsoft YaHei",sans-serif;
     background-color: #333;
 }
+.show {
+    display: block;
+}
+.hide {
+    display: none;
+}
 /*旋转地球动画*/
 #echarts-x-content{
     width: 100%;
@@ -151,7 +157,15 @@ body{
     font-size:14px;
 }
 .left-bottom-text{
+    position: relative;
     margin:5px 0 0 10px;
+}
+.left-bottom-text .weather{
+    position: absolute;
+    font-size: 24px;
+    color: #FF6600;
+    left: 72%;
+    top: 24%;
 }
 .left-bottom-scroll{
     margin-top: 5px;
@@ -186,17 +200,18 @@ body{
 }
 .car-user ul{
     float: left;
-    margin: 10px 0 0 30px;
+    margin: 0 0 5px 30px;
 }
 .car-user ul p{
     font-size: 16px;
     color: #89F8E2;
     text-align: left;
+    margin: 0;
 }
 .car-charts {
     position: absolute;
-    left: 59%;
-    top: 10px;
+    left: 62%;
+    top: 48%;
 }
 .car-charts div{
     width: 150px;
@@ -209,7 +224,8 @@ body{
 .car-content{
     margin-top: 208px;
     position: relative;
-    left: 5%;
+    left: -4%;
+    bottom: 23px;
 }
 #myCar {
     width: 660px;
@@ -225,7 +241,8 @@ body{
 .car-bottom-text{
     width: 65%;
     height: 200px;
-    background-color: rgba(6,72,72,0.5);
+    /*background-color: rgba(6,72,72,0.5);*/
+    background-color: transparent;
     float: left;
     overflow: hidden;
 }
@@ -249,8 +266,8 @@ body{
     margin: 0 auto;
 }
 /*浮动信息*/
-.car-content p{
-    /*width: 100px;*/
+/*.car-content p{
+    !*width: 100px;*!
     position: absolute;
 }
 .car-content p {
@@ -311,6 +328,32 @@ body{
 .car-content p:last-child:after{
     content: '';
     border: none;
+}*/
+.car-list{
+    position: absolute;
+    left: 76%;
+    top: -47%;
+}
+.car-list li{
+    margin-bottom: 3px;
+    padding: 3px;
+}
+.carListBack{
+    background-color: #00FF00;
+}
+.car-list li p{
+    font-size: 18px;
+    color: #3C9700;
+    margin: 0;
+}
+.resultList{
+    font-size: 22px;
+    color: #FF9900;
+}
+li.resultList p{
+    padding-top: 5px;
+    font-size: 22px;
+    color: #FF9900;
 }
 
 /*右边部分*/
@@ -321,26 +364,21 @@ body{
     background-color: rgba(6,72,72,0.5);
     border-radius: 5px;
 }
-.right-container section.car-user{
-    margin-left:0;
-    padding: 0;
-    height: auto;
-}
-.right-container .right-bottom img{
-    width:50%;
+.right-container .right-bottom h3 {
     float: left;
-    padding: 5px 0 5px 5px;
+    padding: 5px 0 5px 1px;
+    font-size: 20px;
+    color: #89F8E2;
+    text-align: center;
 }
-.right-container section.right-bottom ul{
-
+.right-container .right-bottom h3 span {
+    font-size: 24px;
+    color: #FF6600;
+    padding-right: 10px;
 }
 #right-top{
     height: 437px;
 }
-/*.right-bottom{*/
-    /*position: static;*/
-    /*margin-bottom:0;*/
-/*}*/
 .right-bottom{
     padding: 5px;
     border-radius: 5px;
@@ -349,7 +387,7 @@ body{
 }
 .right-bottom ul{
     float: left;
-    margin: 5px 0 0 5px;
+    margin: 7px 0 0 3px;
 }
 .right-bottom li{
     margin-bottom: 15px;
@@ -362,8 +400,67 @@ body{
 
 
 
-
-
+/*平行停车场*/
+#container-park{
+    height: 100%;
+}
+/*右上角按钮*/
+.right-top-park{
+    position: absolute;
+    right: 15px;
+    top: 46px;
+}
+.right-top-park p {
+    width: 65px;
+    height: 65px;
+    line-height: 65px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #FF9900;
+    background-color: rgba(26, 68, 129, 0.7);
+    border-radius: 10px;
+    float: left;
+    cursor: pointer;
+}
+.main-list-park{
+    float: left;
+    margin-right: 38px;
+    display: none;
+}
+.main-list-park li{
+    font-size: 16px;
+    color: #fff;
+    background-color: #1C96B5;
+    position: relative;
+    width: 104px;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    margin-bottom:5px;
+    cursor: pointer;
+    -webkit-transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    -ms-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+.main-list-park li:first-child {
+    right: 12px;
+}
+.main-list-park li:nth-child(2) {
+    left: 20px;
+}
+.main-list-park li:nth-child(3){
+    left: 58px;
+}
+.main-list-park li:nth-child(4) {
+    left: 104px;
+}
+.main-list-park li:hover{
+    color: #FF9900;
+    background-color: rgba(26,68,129,0.7);
+}
 
 
 

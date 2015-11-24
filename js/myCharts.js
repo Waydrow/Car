@@ -87,7 +87,7 @@ function createRadar(ec) {
                 name: {
                     show: true,
                     textStyle: {
-                        color: '#fff'
+                        color: '#FF6600'
                     }
                 },
                 radius: 130

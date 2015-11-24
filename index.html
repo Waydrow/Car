@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
     <title>index</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/high.css">
@@ -87,6 +89,7 @@
                         <p>风力：<span>3级</span></p>
 
                         <p>温度：<span>2-10C</span></p>
+                        <p class="weather">雾</p>
                     </div>
                     <div class="left-bottom-scroll">
                         <ul>
@@ -133,10 +136,16 @@
                         <p>用户名：<span>JAY</span></p>
                     </li>
                     <li>
-                        <p>车辆：<span>本田</span></p>
+                        <p>性别：<span>男</span></p>
                     </li>
                     <li>
-                        <p>车牌号：<span>鲁B1234</span></p>
+                        <p>年龄：<span>33</span></p>
+                    </li>
+                    <li>
+                        <p>职业：<span>歌手</span></p>
+                    </li>
+                    <li>
+                        <p>驾龄：<span>3年</span></p>
                     </li>
                     <li>
                         <p>信用情况：<span>×××</span></p>
@@ -149,11 +158,16 @@
             </section>
             <section class="car-content">
                 <section id="myCar"></section>
-                <p>创业大厦停车场</p>
-                <p>创业大厦停车场</p>
-                <p>创业大厦地上停车场</p>
-                <p>创业大厦地下停车场</p>
-                <p>创业大厦停车场</p>
+                <ul class="car-list">
+                    <li><p>创业大厦停车场</p></li>
+                    <li><p>创业大厦停车场</p></li>
+                    <li><p>创业大厦停车场</p></li>
+                    <li><p>创业大厦停车场</p></li>
+                    <li><p>创业大厦停车场</p></li>
+                    <li><p>创业大厦停车场</p></li>
+                    <li><p>创业大厦停车场</p></li>
+                    <li><p>创业大厦停车场</p></li>
+                </ul>
             </section>
             <section class="car-bottom clearfix">
                 <section class="car-bottom-text">
@@ -219,7 +233,7 @@
             <div class="right-content">
                 <section id="right-top" class="right-top"></section>
                 <section class="right-bottom clearfix">
-                    <img src="images/user1.png" alt="车主">
+                    <h3>还有<br><br><span>103</span>位<br><br>欲前往创业大厦</h3>
                     <ul>
                         <li>
                             <p>用户名：<span>JAY</span></p>
@@ -231,10 +245,10 @@
                             <p>车牌号：<span>鲁B1234</span></p>
                         </li>
                         <li>
-                            <p>信用情况：<span>×××</span></p>
+                            <p>当前位置：<span>市政府</span></p>
                         </li>
                         <li>
-                            <p>信用情况：<span>×××</span></p>
+                            <p>目标位置：<span>创业大厦</span></p>
                         </li>
                     </ul>
                 </section>
@@ -277,6 +291,11 @@
         /*当地球旋转加载完成，开始加载第二页的图表*/
         var timer = setInterval(function () {
             t += 1;
+            if(isReady){
+                document.body.style.background
+                        = "url(images/backWhole.png) no-repeat";
+                document.body.style.backgroundSize = "100%";
+            }
             if (isReady || t > 50) {
                 createRadar(ec);
                 createGauge(ec);
