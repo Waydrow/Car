@@ -94,16 +94,34 @@ $(document).ready(function(){
 
 
 /*平行车辆页面*/
+$(document).ready(function () {
+    /*右上角*/
+    $(".right-top-park").hover(function(){
+        $(this).children('ul').stop(true,false).fadeIn();
+    },function(){
+        $(this).children('ul').stop(true,false).delay(300).fadeOut();
+    });
 
-/*右上角*/
-$(".right-top-park").hover(function(){
-    $(this).children('ul').stop(true,false).fadeIn();
-},function(){
-    $(this).children('ul').stop(true,false).delay(200).fadeOut();
+    /*右下角*/
+    $(".right-bottom-park").hover(function(){
+        $(this).children('ul').delay(200).stop(true,false).delay(300).slideDown();
+    },function(){
+        $(this).children('ul').stop(true,false).delay(300).slideUp();
+    });
+
+    /*左下角*/
+    $(".progress-btn").on("click",function(){
+        $(this).toggleClass("progress-btn-on");
+        if($(this).hasClass("progress-btn-on")){
+            $(this).children('span').html("隐藏图例");
+            $(this).children('i').removeClass("icon-plus").addClass("icon-minus");
+        } else {
+            $(this).children('span').html("显示图例");
+            $(this).children('i').removeClass("icon-minus").addClass("icon-plus");
+        }
+        $(this).next("ul").stop(true,false).slideToggle();
+    })
 });
-
-
-
 
 
 

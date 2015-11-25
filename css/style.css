@@ -462,10 +462,106 @@ li.resultList p{
     background-color: rgba(26,68,129,0.7);
 }
 
+/*右下角按钮*/
+.right-bottom-park{
+    position: absolute;
+    bottom: 10px;
+    right:15px;
+}
+.right-bottom-park p{
+    color: #FF9900;
+    background-color: rgba(26,68,129,0.7);
+    width: 106px;
+    height: 38px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    z-index: 1000;
+}
+.right-bottom-park ul{
+    display: none;
+    position: absolute;
+    z-index: 100;
+    bottom:46px;
+}
+.right-bottom-park li {
+    color: #fff;
+    background-color: rgba(33, 118, 139, 0.7);
+    width: 106px;
+    height: 38px;
+    text-align: center;
+    line-height: 38px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom:5px;
+    -webkit-transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    -ms-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+.right-bottom-park li:hover{
+    color: #FF9900;
+    background-color: rgba(26,68,129,0.7);
+}
 
-
-
-
+/*左下角*/
+.left-bottom-park{
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    width: 40%;
+}
+.left-bottom-park ul{
+    display: none;
+}
+.left-bottom-park .progress{
+    background-color: transparent;
+    background-image: none;
+    height: 25px;
+    margin-bottom:5px;
+}
+.left-bottom-park .progress .progress-bar{
+    line-height:25px;
+}
+.location{
+    float: left;
+    padding-left: 10px;
+}
+.progress-num{
+    float: right;
+    padding-right:10px;
+}
+.progress-btn{
+    cursor: pointer;
+}
+.progress-btn span{
+    width: 88px;
+    height: 30px;
+    color: #1104BD;
+    background-color: rgba(136,136,136,0.7);
+    font-size: 16px;
+    line-height:30px;
+    text-align: center;
+    border-radius: 5px;
+    display: inline-block;
+}
+.progress-btn i{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    color: #888;
+    font-size: 16px;
+    border: 3px solid #888;
+    border-radius: 30px;
+    text-align: center;
+    padding: 5px;
+    margin-right: 4px;
+}
 
 
 
