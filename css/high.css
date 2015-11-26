@@ -32,13 +32,13 @@
 
 @media screen and (min-width: 1920px){
     .left-container .left-top{
-        height:350px;
+        /*height:350px;*/
     }
     .left-container .left-bottom{
-        height: 350px;
+        /*height: 350px;*/
     }
     .left-container .left-mid{
-        height:220px;
+        /*height:220px;*/
     }
 
     #myCar{

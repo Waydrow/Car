@@ -94,18 +94,17 @@ body{
 /*左边部分*/
 .left-container {
     margin: 10px 0 0 10px;
+    height: 100%;
+    min-height:650px !important;
 }
-.left-content section{
-    /*width: 250px;*/
-    height: 200px;
+.left-container section{
     background-color: rgba(6,72,72,0.5);
     margin-bottom:5px;
     border-radius: 5px;
 }
 .left-container .left-top{
-    height:300px;
+    height:46.5%;
     position: relative;
-    /*padding-top:21px;*/
 }
 .left-top-text {
     position: absolute;
@@ -121,15 +120,9 @@ body{
     width: 100%;
     height: 100%;
     position: relative;
-    top: 21px;
+    top: 28px;
 }
-.left-container .left-mid{
-    height: 146px;
-}
-.left-container .left-bottom{
-    height: 185px;
-}
-.left-content section.left-bottom{
+.left-container section.left-bottom{
     margin-bottom:0;
 }
 /*左侧中间位置*/
@@ -137,6 +130,7 @@ body{
     overflow: hidden;
     text-align: center;
     padding: 10px 0;
+    height: 20%;
 }
 .left-mid p{
     color: #89F8E2;
@@ -145,11 +139,14 @@ body{
 }
 .left-mid ul{
     margin-bottom:0;
-    margin-top: 13px;
+    margin-top: 1px;
 }
 .left-mid ul li{
     max-width:74%;
     margin: 0 auto;
+}
+.left-bottom{
+    height: 30%;
 }
 .left-bottom-text p{
     margin-bottom:0;
@@ -185,6 +182,8 @@ body{
 .car-container {
     position: relative;
     margin-right:-10px;
+    height: 100%;
+    min-height: 650px !important;
 }
 .car-user{
     width: 330px;
@@ -226,10 +225,11 @@ body{
     position: relative;
     left: -4%;
     bottom: 23px;
+    height:46%;
 }
 #myCar {
     width: 660px;
-    height: 300px;
+    height: 90%;
     background-repeat: no-repeat;
     background-size: 100%;
 }
@@ -563,10 +563,30 @@ li.resultList p{
     margin-right: 4px;
 }
 
-
-
-
-
+/*时间线*/
+.time-line {
+    position: absolute;
+    right: 140px;
+    bottom: 10px;
+}
+.time-line .slider{
+    width: 500px !important;
+}
+/*滑动小按钮*/
+.slider-handle{
+    background-color: #fff !important;
+    background-image: none !important;
+}
+/*滑动条背景色*/
+.slider-track{
+    background-color: #0099CC !important;
+    background-image: none !important;
+}
+/*滑动过后的颜色*/
+.slider-selection{
+    background-color: #0099CC !important;
+    background-image: none !important;
+}
 
 
 
