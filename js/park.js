@@ -6,6 +6,7 @@
 
 /*平行车辆页面*/
 $(document).ready(function () {
+
     /*右上角*/
     $(".right-top-park").hover(function(){
         $(this).children('ul').stop(true,false).fadeIn();
@@ -43,6 +44,11 @@ $(document).ready(function () {
             if(index==1)return;     /*停车场分布左下方无显示*/
             else if(index==0)$(leftBottomPark[0]).removeClass('hide');
             else $(leftBottomPark[index-1]).removeClass('hide');
+            /*若为模拟建设，应自动打开排行*/
+            if(index==3){
+                if(!$(leftBottomPark[2]).children('p.progress-btn').hasClass('progress-btn-on'))
+                    $(leftBottomPark[2]).children('p.progress-btn').click();
+            }
         });
     });
 
@@ -171,10 +177,56 @@ $(document).ready(function () {
             else $('.parking-lot-state').removeClass('hide');
         })
     });
-    /*模拟建设*/
+    /*推荐方案*/
+    /*创建滑动条*/
+    var recommandWay = $(".recommand-way");
+    var recommandWayContent = $(".recommand-way ul div");
+    var myRecommandArray = [];
+    for(var i=0; i<recommandWayContent.length; i++){
+        myRecommandArray[i] = $(recommandWayContent[i]).slider({
+            'max':30,
+            'tooltip':'hide'
+        });
+    }
+    var rightBottomSetting = $(".right-bottom-set li");
+    $(rightBottomSetting).each(function (index) {
+       $(this).on('click',function(){
+           $(this).parent().next().html($(this).html());
+           if(index==1)$(recommandWay).toggleClass('hide');
+       });
+    });
+    /*推荐方案点击确定后*/
+    $(".submit-recommand").on('click', function () {
+        var temp = 0;
+        for(var i=0; i< $(this).prev('ul').find('div.decrease-num').length; i++)
+            temp+=$(this).prev('ul').find('div.decrease-num')[i].value;
+        temp=temp*0.5;
+        $(".recommand-ranking ul .progress-bar+.progress-bar").eq(0).animate({
+            width: temp+"%"
+        });
+        $(".recommand-ranking ul .progress-bar").eq(0).animate({
+            width: ($(this).width()-temp)+'%'
+        });
+        var timerRanking = setInterval(function(){
+            $('.recommand-ranking ul .progress-num').eq(0)
+                .html($(".recommand-ranking ul .progress-bar").eq(0).width());
+        },200);
 
+    });
 
     /*左下角列表*/
+    !function () {
+        var tempArray = [],
+            temp = $('.progress-num');
+        for(var i=0; i<temp.length; i++){
+            tempArray[i] = ($(temp[i]).parent().width()/100)
+                *$(window).width()*($(temp[i]).parents('div.left-bottom-park').width()/100);
+        }
+        for( i=0; i<temp.length; i++){
+            $(temp[i]).html(Math.floor(tempArray[i]));
+        }
+    }();
+
     $(".progress-btn").on("click",function(){
         $(this).toggleClass("progress-btn-on");
         var progressBtnSpan = $(this).children('span');

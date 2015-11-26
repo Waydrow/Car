@@ -637,6 +637,9 @@ li.resultList p{
     background-image: none !important;
     background-color: #AB0202;
 }
+.left-bottom-park + .left-bottom-park .progress-bar+.progress-bar{
+    background-color: #299B0C;
+}
 
 /*时间线*/
 .time-line {
@@ -708,8 +711,40 @@ li.resultList p{
     color: #FC1405;
 }
 
-
-
+/*推荐方案弹出窗*/
+.recommand-way{
+    background-color: rgba(9,155,191,0.7);
+    position: absolute;
+    right: 18%;
+    top: 30%;
+    border-radius: 10px;
+}
+.recommand-way ul{
+    padding: 10px 15px;
+}
+.recommand-way ul li{
+    color: #FF9900;
+    font-size: 20px;
+    font-weight: bold;
+}
+.recommand-way ul p{
+    display: inline-block;
+    min-width: 156px;
+}
+.recommand-way ul+input{
+    background-color: #00FF00;
+    color: #000;
+    font-size: 18px;
+    border-radius: 15px;
+    padding:5px 15px;
+    display: block;
+    margin: 0 auto 15px auto;
+    border: none;
+    width: 115px;
+}
+.recommand-way .slider-track,.recommand-way .slider-selection{
+    background-color: #FFCC00 !important;
+}
 
 
 
