@@ -13,8 +13,15 @@
 </head>
 <body>
     <div id="container-park"></div>
+
+    <!--图例与排行-->
+    <!--对应停车需求分布-->
     <div class="left-bottom-park">
-        <p class="progress-btn"><i class="icon-plus"></i><span>显示图例</span></p>
+        <p class="progress-btn">
+            <i class="icon-plus"></i>
+            <span>显示图例</span>
+            <span class="hide">隐藏图例</span>
+        </p>
         <ul>
             <li>
                 <div class="progress">
@@ -42,6 +49,75 @@
             </li>
         </ul>
     </div>
+    <!--对应需求消化比-->
+    <div class="left-bottom-park hide">
+        <p class="progress-btn">
+            <i class="icon-plus"></i>
+            <span>显示排行</span>
+            <span class="hide">隐藏排行</span>
+        </p>
+        <ul>
+            <li>
+                <div class="progress">
+                    <div class="progress-bar clearfix" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+                        <span class="location">创业大厦</span>
+                        <span class="progress-num">90</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="progress">
+                    <div class="progress-bar clearfix" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                        <span class="location">市政府</span>
+                        <span class="progress-num">60</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="progress">
+                    <div class="progress-bar clearfix" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+                        <span class="location">远洋广场</span>
+                        <span class="progress-num">30</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--对应模拟建设-->
+    <div class="left-bottom-park hide">
+        <p class="progress-btn">
+            <i class="icon-plus"></i>
+            <span>显示11排行</span>
+            <span class="hide">隐藏11排行</span>
+        </p>
+        <ul>
+            <li>
+                <div class="progress">
+                    <div class="progress-bar clearfix" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+                        <span class="location">创业大厦</span>
+                        <span class="progress-num">90</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="progress">
+                    <div class="progress-bar clearfix" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                        <span class="location">市政府</span>
+                        <span class="progress-num">60</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="progress">
+                    <div class="progress-bar clearfix" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+                        <span class="location">远洋广场</span>
+                        <span class="progress-num">30</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
     <div class="right-top-park clearfix">
         <ul class="main-list-park">
             <li>停车需求分布</li>
@@ -51,7 +127,10 @@
         </ul>
         <p>R</p>
     </div>
-    <div class="right-bottom-park">
+
+    <!--右下角按钮-->
+    <!--对应停车需求分析-->
+    <div class="right-bottom-park right-bottom-time-control">
         <ul class="second-list-park">
             <li>实时状态</li>
             <li>过去30天</li>
@@ -60,6 +139,34 @@
         </ul>
         <p class="second-main-btn">实时状态</p>
     </div>
+    <!--对应停车场分布-->
+    <div class="right-bottom-park right-bottom-parking-lot clearfix hide">
+        <ul class="second-list-park">
+            <li>隐藏图标</li>
+            <li>显示图标</li>
+        </ul>
+        <p class="second-main-btn">实时状态<i class="icon-circle"></i></p>
+    </div>
+    <!--对应需求消化比-->
+    <div class="right-bottom-park right-bottom-time-control">
+        <ul class="second-list-park">
+            <li>实时状态</li>
+            <li>过去30天</li>
+            <li>过去24小时</li>
+            <li>未来24小时</li>
+        </ul>
+        <p class="second-main-btn">实时状态</p>
+    </div>
+    <!--对应模拟建设-->
+    <div class="right-bottom-park hide">
+        <ul class="second-list-park">
+            <li>模拟建设</li>
+            <li>推荐方案</li>
+        </ul>
+        <p class="second-main-btn">模拟建设</p>
+    </div>
+
+    <!--右下方时间线-->
     <div class="time-line">
         <ul>
             <li></li>
@@ -67,6 +174,15 @@
             <li></li>
         </ul>
     </div>
+    <!--右下方对应停车场分布中的图标-->
+    <div class="parking-lot-state hide">
+        <ul>
+            <li><span>P</span>充足</li>
+            <li><span>P</span>充足</li>
+            <li><span>P</span>紧张</li>
+        </ul>
+    </div>
+
     <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
     <script src="js/park.js"></script>
     <!--百度地图API-->
