@@ -93,7 +93,8 @@ body{
 
 /*左边部分*/
 .left-container {
-    margin: 10px 0 0 10px;
+    padding-top: 10px;
+    margin-left: 10px;
     height: 100%;
     min-height:650px !important;
 }
@@ -146,7 +147,7 @@ body{
     margin: 0 auto;
 }
 .left-bottom{
-    height: 30%;
+    height: 31%;
 }
 .left-bottom-text p{
     margin-bottom:0;
@@ -155,7 +156,7 @@ body{
 }
 .left-bottom-text{
     position: relative;
-    margin:5px 0 0 10px;
+    margin:5px 0 0 14px;
 }
 .left-bottom-text .weather{
     position: absolute;
@@ -207,6 +208,9 @@ body{
     text-align: left;
     margin: 0;
 }
+.car-user ul p span i{
+    color: #F9A700;
+}
 .car-charts {
     position: absolute;
     left: 62%;
@@ -237,27 +241,27 @@ body{
     margin-top: -56px;
     position: relative;
     z-index: 1000;
+    height: 31%;
 }
 .car-bottom-text{
     width: 65%;
-    height: 200px;
-    /*background-color: rgba(6,72,72,0.5);*/
+    height: 100%;
     background-color: transparent;
     float: left;
     overflow: hidden;
 }
 #car-bottom-board {
     width: 34%;
-    height: 200px;
+    height: 100%;
     background-color: #fff;
     float: left;
 }
 .car-content-text{
     height: 90%;
-    margin: 10px 0;
+    /*margin: 10px 0;*/
 }
 .car-content-text ul{
-    margin: 10px 0;
+    margin: 10px auto;
 }
 .car-content-text li{
     color: #89F8E2;
@@ -265,70 +269,6 @@ body{
     max-width: 90%;
     margin: 0 auto;
 }
-/*浮动信息*/
-/*.car-content p{
-    !*width: 100px;*!
-    position: absolute;
-}
-.car-content p {
-    font-size: 18px;
-    color: #89F8E2;
-    text-align: center;
-    background-color: rgba(13,128,230,0.6);
-    padding:5px;
-}
-.car-content p:after{
-    content: '';
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 16px 12.5px 0 12.5px;
-    border-color: rgba(13,128,230,0.6) transparent transparent transparent;
-    position: absolute;
-    top: 35px;
-    right: 9px;
-}
-.car-content section + p{
-    left: -5%;
-    top: 40%;
-}
-.car-content p:nth-child(3) {
-    left:9%;
-    top: 0;
-}
-.car-content p:nth-child(4){
-    left:49%;
-    top: -18%;
-}
-.car-content p:nth-child(4):after{
-    left: 10px;
-}
-.car-content p:nth-child(5){
-    left: 70%;
-    top: 25%;
-}
-.car-content p:nth-child(5):after{
-    left: 10px;
-}
-.car-content p:last-child {
-    left: 59%;
-    top: 59%;
-}
-.car-content p:last-child:before {
-    content: '';
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 12.5px 16px 12.5px;
-    border-color: transparent transparent rgba(13,128,230,0.6) transparent;
-    position: absolute;
-    bottom: 35px;
-    left:10px;
-}
-.car-content p:last-child:after{
-    content: '';
-    border: none;
-}*/
 .car-list{
     position: absolute;
     left: 76%;
@@ -348,46 +288,69 @@ body{
 }
 .resultList{
     font-size: 22px;
-    color: #FF9900;
+    color: #FF6600;
 }
 li.resultList p{
     padding-top: 5px;
-    font-size: 22px;
-    color: #FF9900;
+    font-size: 24px;
+    font-weight: bold;
+    color: #FF6600;
 }
 
 /*右边部分*/
 .right-container {
-    margin-top: 10px;
+    padding-top: 10px;
+    height: 100%;
+    min-height: 650px;
 }
-.right-content section{
+.right-container section{
     background-color: rgba(6,72,72,0.5);
     border-radius: 5px;
 }
 .right-container .right-bottom h3 {
     float: left;
-    padding: 5px 0 5px 1px;
+    padding: 12% 0 0 0;
     font-size: 20px;
     color: #89F8E2;
     text-align: center;
+    margin: 0;
 }
 .right-container .right-bottom h3 span {
     font-size: 24px;
     color: #FF6600;
     padding-right: 10px;
 }
-#right-top{
-    height: 437px;
+.right-top{
+    height: 67%;
+    position: relative;
+}
+.right-top .progress{
+    position: absolute;
+    bottom: -20px;
+    left:0;
+    width: 100%;
+    z-index: 1000;
+    background-image: none !important;
+    background-color: #ADADAD !important;
+}
+.right-top .progress .progress-bar-info{
+    background-color: #007FA5 !important;
+}
+#right-top-map{
+    width: 100%;
+    height: 100%;
 }
 .right-bottom{
     padding: 5px;
     border-radius: 5px;
     margin-top:5px;
     background-color: rgba(6,72,72,0.5);
+    height: 31%;
 }
 .right-bottom ul{
     float: left;
-    margin: 7px 0 0 3px;
+    /*margin: 7px 0 0 3px;*/
+    margin: 4% 0 0 2%;
 }
 .right-bottom li{
     margin-bottom: 15px;
@@ -398,6 +361,114 @@ li.resultList p{
     text-align: left;
 }
 
+
+/*******************************/
+/*媒体查询开始*/
+/*******************************/
+@media screen and (min-width: 1440px) {
+    .left-top-text p{
+        font-size: 18px;
+    }
+    .car-list{
+        top: -38%;
+    }
+    .car-content{
+        margin-top: 247px;
+    }
+    .car-content{
+        left: -1%;
+    }
+    .right-bottom ul{
+        margin: 15% 0 0 2%;
+    }
+    .right-container .right-bottom h3{
+        padding-top: 20%;
+    }
+}
+@media screen and (min-width: 1600px){
+    .left-mid ul li{
+        max-width: 100%;
+    }
+    .left-mid p{
+        display: inline-block;
+        padding-right: 7px;
+    }
+    .left-bottom-scroll ul li{
+        font-size: 16px;
+    }
+    .left-bottom-text p{
+        margin-left: 20px;
+    }
+    .left-bottom-text .weather{
+        left: 66%;
+        margin: 0;
+    }
+    .left-bottom-scroll{
+        margin-top: 23px;
+    }
+    .left-bottom-text{
+        padding-top: 6px;
+    }
+    #myCar{
+        width: 700px;
+    }
+    .car-content{
+        left: 5%;
+        bottom: -19px;
+    }
+    .car-list{
+        left: 70%;
+        top: -37%;
+    }
+    .car-charts{
+        left: 66%;
+        top: 57%;
+    }
+    .car-bottom{
+        height: 24%;
+        margin-top: 9px;
+    }
+    .car-bottom-text{
+        margin-right: -14px;
+    }
+    .right-bottom{
+        min-height: 225px;
+    }
+}
+
+@media screen and (min-width: 1920px){
+    #myCar{
+        width: 800px;
+    }
+    .car-bottom{
+        margin-top: 6%;
+    }
+    .car-content{
+        left:10%;
+        top: 9%;
+        margin-top: 21.5%;
+    }
+    .car-list {
+        left: 69%;
+        top: -43%;
+    }
+    .car-charts{
+        top: 59%;
+        left: 68%;
+    }
+    .right-bottom{
+        min-height: 252px;
+    }
+    .right-bottom ul{
+        margin: 15% 0 0 16%;
+    }
+    .right-container .right-bottom h3{
+        padding-left: 3%;
+    }
+}
+/*******************************/
+/*媒体查询结束*/
+/*******************************/
 
 
 /*平行停车场*/
