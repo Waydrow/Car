@@ -716,7 +716,7 @@ li.resultList p{
     background-color: rgba(9,155,191,0.7);
     position: absolute;
     right: 18%;
-    top: 30%;
+    top: 47%;
     border-radius: 10px;
 }
 .recommand-way ul{
@@ -746,6 +746,78 @@ li.resultList p{
     background-color: #FFCC00 !important;
 }
 
+/*右下角模拟建设点击后*/
+.simulate-build{
+    z-index: 1000;
+}
+.park-pin{
+    position: absolute;
+    right: 52px;
+    bottom: 136px;
+    font-size: 46px;
+    font-weight: bold;
+    color: #07F9D4;
+}
+.build-window{
+    position: absolute;
+    right: 18%;
+    top: 13%;
+    border-radius: 10px;
+    background-color: rgba(9,155,191,0.7);
+}
+.build-window i {
+    font-size: 30px;
+    color: #fff;
+    display: block;
+    float: right;
+    margin: 5px 10px 0 0;
+    cursor: pointer;
+}
+.build-window ul{
+    padding: 45px 15px 10px 15px;
+}
+.build-window li{
+    color: #63FF00;
+    font-size: 20px;
+    font-weight: bold;
+}
+.build-window ul p{
+    display: inline-block;
+    min-width: 140px;
+}
+.build-window select{
+    background-color: #00CCFF;
+    color: #FF9900;
+}
+.build-window p span{
+    color: #FF9900;
+    padding-right: 20px;
+    font-size: 24px;
+}
+.build-window input,.build-window-confirm input{
+    background-color: #00FF00;
+    color: #000;
+    font-size: 20px;
+    border-radius: 15px;
+    padding:5px 15px;
+    display: block;
+    margin: 0 auto 15px auto;
+    border: none;
+    width: 115px;
+}
+.build-window-confirm{
+    position: absolute;
+    right: 19%;
+    top: 50%;
+    border-radius: 10px;
+    padding: 20px 45px 10px 45px;
+    background-color: rgba(9,155,191,0.7);
+}
+.build-window-confirm p{
+    font-size: 20px;
+    color: #63FF00;
+    width: 220px;
+}
 
 
 

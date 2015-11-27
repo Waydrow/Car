@@ -93,26 +93,34 @@
         <ul>
             <li>
                 <div class="progress">
-                    <div class="progress-bar clearfix" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                    <div class="progress-bar clearfix" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" data-value="100" style="width: 100%;">
                         <span class="location">创业大厦</span>
                         <span class="progress-num"></span>
                     </div>
-                    <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
-                </div>
-            </li>
-            <li>
-                <div class="progress">
-                    <div class="progress-bar clearfix" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                        <span class="location">市政府</span>
-                        <span class="progress-num">50</span>
+                    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0">
+                        <span class="progress-num"></span>
                     </div>
                 </div>
             </li>
             <li>
                 <div class="progress">
-                    <div class="progress-bar clearfix" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+                    <div class="progress-bar clearfix" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" data-value="60" style="width: 60%;">
+                        <span class="location">市政府</span>
+                        <span class="progress-num">50</span>
+                    </div>
+                    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0">
+                        <span class="progress-num"></span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="progress">
+                    <div class="progress-bar clearfix" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-value="30" style="width: 30%;">
                         <span class="location">远洋广场</span>
                         <span class="progress-num">30</span>
+                    </div>
+                    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0">
+                        <span class="progress-num"></span>
                     </div>
                 </div>
             </li>
@@ -209,7 +217,35 @@
                 <div class="decrease-num"></div>
             </li>
         </ul>
-        <input type="submit" value="确定" class="submit-recommand">
+        <input type="button" value="确定" class="submit-recommand">
+    </div>
+
+    <div class="simulate-build">
+        <p class="park-pin hide">P</p>
+        <div class="build-window hide">
+            <i class="icon-pencil"></i>
+            <ul>
+                <li>
+                    <p>停车场形态：</p>
+                    <select name="parking">
+                        <option value="0">普通地上停车场</option>
+                        <option value="1">普通地下停车场</option>
+                        <option value="2">特殊地上停车场</option>
+                    </select>
+                </li>
+                <li>
+                    <p>设计车位容量：</p>
+                    <p><span>105</span>个</p>
+                </li>
+            </ul>
+            <input type="button" value="建设" class="build-confirm-btn hide">
+        </div>
+        <div class="build-window-confirm hide">
+            <p>
+                投入使用后会改善金水路的交通拥堵情况，解决XXX地方停车难问题，有效缓解XXX地方停车压力 
+            </p>
+            <input type="button" value="确定">
+        </div>
     </div>
 
     <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
