@@ -196,6 +196,8 @@ $(document).ready(function () {
         $(".park-pin").addClass('hide');    //隐藏大头针 P
         $(".build-window").addClass('hide');    //隐藏建设窗口
         $('.build-window input').addClass('hide'); //隐藏建设按钮
+        $(".build-window div.progress").addClass('hide'); //隐藏进度条
+        $(".build-window .progress-bar").css({'width':0}); //进度条重置为0
         $(".recommand-way").addClass('hide');   //隐藏推荐弹出窗口
         $(".build-window-confirm").addClass('hide'); //隐藏点击建设后的确认窗
     }
@@ -277,10 +279,19 @@ $(document).ready(function () {
     /*可编辑状态切换*/
     $(".icon-pencil").on('click',function(){
         $(this).siblings('input').toggleClass('hide');
+        $(".build-window .progress").addClass('hide');
+        $(".build-window .progress-bar").css({'width':0});
     });
     /*点击建设后*/
     $(".build-confirm-btn").on('click',function(){
-        $('.build-window-confirm').removeClass('hide');
+        $(".build-window .progress").delay(300).removeClass('hide');
+        /*加载进度条*/
+        $(".build-window .progress-bar").animate({
+            width: '100%'
+        },1500,function(){
+            /*进度条加载完毕，弹出确认窗口*/
+            $('.build-window-confirm').delay(300).removeClass('hide');
+        });
     });
     $('.build-window-confirm input').on('click', function () {
         $(this).parent().addClass('hide');

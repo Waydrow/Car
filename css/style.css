@@ -474,6 +474,8 @@ li.resultList p{
 /*平行停车场*/
 #container-park{
     height: 100%;
+    min-width: 1200px;
+    min-height: 600px;
 }
 /*右上角按钮*/
 .right-top-park{
@@ -817,6 +819,13 @@ li.resultList p{
     font-size: 20px;
     color: #63FF00;
     width: 220px;
+}
+.build-window div.progress{
+    margin: 0;
+    height: 26px;
+}
+.build-window .progress-bar{
+    line-height: 26px;
 }
 
 
