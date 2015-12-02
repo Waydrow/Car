@@ -277,6 +277,7 @@
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 <script src="js/index.js"></script>
 <script src="js/myCharts.js"></script>
+<script src="js/echarts/build/dist/echarts-all.js"></script>
 <script src="js/echarts/build/dist/echarts.js"></script>
 <script src="js/echarts-x/build/dist/echarts-x.js"></script>
 <script type="text/javascript" src="js/3dCarRoate.min.js"></script>
@@ -296,11 +297,7 @@
         'echarts-x',
         // ECharts-X 中 map3d 的地图绘制基于 ECharts 中的 map。
         'echarts/chart/map',
-        'echarts-x/chart/map3d',
-        'echarts/chart/radar',
-        'echarts/chart/gauge',
-        'echarts/chart/pie',
-        'echarts/chart/funnel'
+        'echarts-x/chart/map3d'
     ], function (ec) {
         var t = 0;
         /*首先加载地球旋转*/
@@ -315,9 +312,9 @@
                 });
             }
             if (isReady || t > 50) {
-                createRadar(ec);
-                createGauge(ec);
-                createPie(ec);
+                createRadar();
+                createGauge();
+                createPie();
                 clearInterval(timer);
             }
         }, 100)

@@ -518,6 +518,10 @@ li.resultList p{
     -o-transition: all .2s ease-in;
     transition: all .2s ease-in;
 }
+.on{
+    color: #FF9900 !important;
+    background-color: rgba(26,68,129,0.7) !important;
+}
 .main-list-park li:first-child {
     right: 12px;
 }
@@ -590,38 +594,77 @@ li.resultList p{
     width: 40%;
 }
 .left-bottom-park ul{
-    display: none;
+    /*display: none;*/
 }
 .left-bottom-park .progress{
     background-color: transparent;
     background-image: none;
     height: 25px;
     margin-bottom:5px;
+    box-shadow: none;
 }
 .left-bottom-park .progress .progress-bar{
     line-height:25px;
+    background-image: none;
+    background-color: rgba(12,73,164,0.6);
+}
+.left-bottom-park ul li:nth-child(2) .progress-bar{
+    background-color: rgba(13,105,165,0.6);
+}
+.left-bottom-park ul li:nth-child(3) .progress-bar{
+    background-color: rgba(13,135,165,0.6);
+}
+.left-bottom-park ul li:nth-child(4) .progress-bar{
+    background-color: rgba(13,165,165,0.6);
+}
+.left-bottom-park ul li:nth-child(5) .progress-bar{
+    background-color: rgba(12,134,134,0.6);
+}
+.left-bottom-park ul li:nth-child(6) .progress-bar{
+    background-color: rgba(44,165,135,0.6);
+}
+.left-bottom-park ul li:nth-child(7) .progress-bar{
+    background-color: rgba(74,165,165,0.6);
+}
+.left-bottom-park ul li:nth-child(8) .progress-bar{
+    background-color: rgba(73,164,164,0.6);
+}
+.left-bottom-park ul li:nth-child(9) .progress-bar{
+    background-color: rgba(107,197,198,0.6);
+}
+.left-bottom-park ul li:nth-child(10) .progress-bar{
+    background-color: rgba(107,187,198,0.6);
 }
 .location{
     float: left;
     padding-left: 10px;
+    color: #FF9900;
+    font-size: 14px;
 }
 .progress-num{
     float: right;
     padding-right:10px;
+    color: #FF0000;
+    font-size: 14px;
+    font-weight: bold;
 }
 .progress-btn{
+    /*width: 24%;*/
     cursor: pointer;
+    position: absolute;
+    top: -44px;
 }
 .progress-btn span{
     width: 88px;
     height: 30px;
-    color: #1104BD;
+    color: #1511B4;
     background-color: rgba(136,136,136,0.7);
     font-size: 16px;
     line-height:30px;
     text-align: center;
     border-radius: 5px;
     display: inline-block;
+    display: none;
 }
 .progress-btn i{
     display: inline-block;
@@ -637,12 +680,59 @@ li.resultList p{
 }
 .left-bottom-park + .left-bottom-park .progress-bar{
     background-image: none !important;
-    background-color: #AB0202;
+    background-color: rgba(165,13,13,0.6);
+    position: relative;
+    z-index: 1000;
 }
 .left-bottom-park + .left-bottom-park .progress-bar+.progress-bar{
-    background-color: #299B0C;
+    background-color: #299B0C !important;
 }
-
+.left-bottom-park + .left-bottom-park ul li:nth-child(2) .progress-bar{
+    background-color: rgba(165,13,44,0.6);
+}
+.left-bottom-park + .left-bottom-park ul li:nth-child(3) .progress-bar{
+    background-color: rgba(165,44,13,0.6);
+}
+.left-bottom-park + .left-bottom-park ul li:nth-child(4) .progress-bar{
+    background-color: rgba(165,44,44,0.6);
+}
+.left-bottom-park + .left-bottom-park ul li:nth-child(5) .progress-bar{
+    background-color: rgba(162,71,70,0.6);
+}
+.left-bottom-park + .left-bottom-park ul li:nth-child(6) .progress-bar{
+    background-color: rgba(165,74,44,0.6);
+}
+.left-bottom-park + .left-bottom-park ul li:nth-child(7) .progress-bar{
+    background-color: rgba(165,105,44,0.6);
+}
+.left-bottom-park + .left-bottom-park ul li:nth-child(8) .progress-bar{
+    background-color: rgba(181,121,29,0.6);
+}
+.left-bottom-park + .left-bottom-park ul li:nth-child(9) .progress-bar{
+    background-color: rgba(165,135,12,0.6);
+}
+.left-bottom-park + .left-bottom-park ul li:nth-child(10) .progress-bar{
+    background-color: rgba(165,135,20,0.6);
+}
+.left-bottom-park + .left-bottom-park .location{
+    color: #6EE2E2;
+}
+.left-bottom-park + .left-bottom-park .progress-num{
+    color: #77F800;
+}
+.left-bottom-park + .left-bottom-park .progress-bar+.progress-bar .progress-num{
+    color: #000;
+}
+.left-bottom-park + .left-bottom-park .progress-bar+.progress-bar{
+    position: relative;
+    z-index: 999;
+}
+.left-bottom-park li .progress .progress-bar:first-child{
+    min-width: 14%;
+}
+.left-bottom-park li .progress .progress-bar+.progress-bar{
+    max-width: 86%;
+}
 /*时间线*/
 .time-line {
     position: absolute;
@@ -722,7 +812,16 @@ li.resultList p{
     border-radius: 10px;
 }
 .recommand-way ul{
-    padding: 10px 15px;
+    padding: 35px 15px 10px 15px;
+}
+.recommand-way i.icon-remove {
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    right: 16px;
+    top: 6px;
 }
 .recommand-way ul li{
     color: #FF9900;
@@ -790,13 +889,19 @@ li.resultList p{
 .build-window select{
     background-color: #00CCFF;
     color: #FF9900;
+    width: 170px;
 }
 .build-window p span{
     color: #FF9900;
     padding-right: 20px;
     font-size: 24px;
 }
-.build-window input,.build-window-confirm input{
+.build-window ul input{
+    width: 170px;
+    text-align: center;
+    color: #FF9900;
+}
+.build-window input.build-confirm-btn,.build-window-confirm input{
     background-color: #00FF00;
     color: #000;
     font-size: 20px;
@@ -820,11 +925,11 @@ li.resultList p{
     color: #63FF00;
     width: 220px;
 }
-.build-window div.progress{
+.build-window div.progress,.recommand-way .progress{
     margin: 0;
     height: 26px;
 }
-.build-window .progress-bar{
+.build-window .progress-bar,.recommand-way .progress-bar{
     line-height: 26px;
 }
 

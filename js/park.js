@@ -22,8 +22,19 @@ $(document).ready(function () {
 
     /*右下方回归初始状态*/
     function clearRightBottom(){
-        for(var i=0; i<rightBottomBtn.length; i++)
+        for(var i=0; i<rightBottomBtn.length; i++){
             $(rightBottomBtn[i]).addClass('hide');
+            if(i==1){
+                $(rightBottomBtn[1]).find('i').addClass('icon-circle');
+            } else {
+                $(rightBottomBtn[i]).find('p')
+                    .html($(rightBottomBtn[i]).find('li:first-child').html());
+            }
+        }
+        $(rightBottomBtn).find('li').removeClass('on');    //默认选中样式回归初始状态
+        $(rightBottomBtn).find('li:first-child').addClass('on');
+        $(rightBottomBtn[1]).find('li:first-child').removeClass('on');
+        $(rightBottomBtn[1]).find('li+li').addClass('on');
     }
     /*左下方回归初始状态*/
     function clearLeftBottom(){
@@ -34,6 +45,10 @@ $(document).ready(function () {
         $(this).on('click',function(){
             /*主按钮内容变化*/
             $('.main-list-park+p').html(rightTopMainContent[index]);
+            for(var i=0; i<rightTopSecondList.length; i++)
+                $(rightTopSecondList[i]).removeClass('on');
+            $(this).addClass('on');
+            $(this).parent().fadeOut('fast');
             /*左下方不显示，右下方显示图标按钮*/
             clearRightBottom();     /*右下方先隐藏全部按钮*/
             clearTimeLineAndState(); /*隐藏右下角时间线*/
@@ -42,13 +57,26 @@ $(document).ready(function () {
             if(index==0||index==2)
                 $(rightBottomBtn).toggleClass('right-bottom-time-control');
             clearLeftBottom();      /*左下方按钮先全部隐藏*/
-            if(index==1)return;     /*停车场分布左下方无显示*/
+            if(index==1){   /*停车场分布左下方无显示*/
+                $('.parking-lot-state').removeClass('hide');
+                return;
+            }
             else if(index==0)$(leftBottomPark[0]).removeClass('hide');
             else $(leftBottomPark[index-1]).removeClass('hide');
-            /*若为模拟建设，应自动打开排行*/
+            /*模拟建设右下角大头针P默认打开*/
             if(index==3){
-                if(!$(leftBottomPark[2]).children('p.progress-btn').hasClass('progress-btn-on'))
-                    $(leftBottomPark[2]).children('p.progress-btn').click();
+                $('.park-pin').removeClass('hide');
+                $('.build-window').removeClass('hide');
+            }
+            /*自动打开排行*/
+            if(index!=1){
+                if(index==0){
+                    if ($(leftBottomPark[index]).children('p.progress-btn').hasClass('progress-btn-off'))
+                        $(leftBottomPark[index]).children('p.progress-btn').click();
+                } else {
+                    if ($(leftBottomPark[index - 1]).children('p.progress-btn').hasClass('progress-btn-off'))
+                        $(leftBottomPark[index - 1]).children('p.progress-btn').click();
+                }
             }
         });
     });
@@ -60,9 +88,11 @@ $(document).ready(function () {
         $(this).children('ul').stop(true,false).delay(300).slideUp();
     });
     $(".right-bottom-parking-lot").hover(function(){
-        $(this).children('ul').stop(true,false).animate({width:'toggle'});
+        if($(this).children('ul').is(':hidden'))
+            $(this).children('ul').stop(true,false).delay(300).animate({width:'toggle'});
     },function(){
-        $(this).children('ul').stop(true,false).delay(300).animate({width:'toggle'});
+        if(!$(this).children('ul').is(':hidden'))
+            $(this).children('ul').stop(true,false).delay(300).animate({width:'toggle'});
     });
 
     /************************/
@@ -149,23 +179,29 @@ $(document).ready(function () {
         for(var i=0; i< $(timeLine).length; i++)
             $(timeLine[i]).prev().addClass('hide');
     }
+
     /*停车需求分析和需求消化比二级菜单*/
     var statusNow = $(".right-bottom-time-control li");
     $(statusNow).each(function(index,ele){
         $(this).on('click',function(){
             $(this).parent('ul').next('p').html($(this).html());
+            for(var i=0; i<statusNow.length; i++)
+                $(statusNow[i]).removeClass('on');
+            $(this).addClass('on');
+            $(this).parent().slideUp('fast');
             /*弹出实时状态*/
             if(index>=4)index-=4;
             if(index == 0) {
-                clearTimeLineAndState();
-                $(".progress-btn").click();
+                //clearTimeLineAndState();
+                if($(".progress-btn").hasClass('progress-btn-off'))
+                    $(".progress-btn").click();
             }
             else {
                 for(var i=0; i< $(timeLine).length; i++){
                     if(i==index-1)continue;
                     $(timeLine[i]).prev('div').addClass("hide");
                 }
-                $(timeLine[index-1]).prev('div').toggleClass('hide');
+                $(timeLine[index-1]).prev('div').removeClass('hide');
             }
         });
     });
@@ -174,8 +210,17 @@ $(document).ready(function () {
     var parkingLot = $('.right-bottom-parking-lot li');
     $(parkingLot).each(function(index){
         $(this).on('click',function(){
-            if(index==0)$('.parking-lot-state').addClass('hide');
-            else $('.parking-lot-state').removeClass('hide');
+            for(var i=0; i<parkingLot.length; i++)
+                $(parkingLot[i]).removeClass('on');
+            $(this).addClass('on');
+            $(this).parent().animate({width:'toggle'},200);
+            if(index==0){
+                $('.parking-lot-state').addClass('hide');
+                $(this).parent().next('p').children('i').removeClass('icon-circle');
+            } else {
+                $('.parking-lot-state').removeClass('hide');
+                $(this).parent().next('p').children('i').addClass('icon-circle');
+            }
         })
     });
 
@@ -189,21 +234,36 @@ $(document).ready(function () {
             'max':30,
             'tooltip':'hide'
         });
+        myRecommandArray[i].on('slide',function(){
+            $(".recommand-way .progress-bar").css({'width':0}); //进度条重置为0
+        });
     }
+    /*推荐方案弹出窗中的关闭按钮*/
+    $(".recommand-way i.icon-remove").on('click',function(){
+        $(recommandWay).addClass('hide');
+    });
     var rightBottomSetting = $(".right-bottom-set li");
     /*隐藏推荐方案与模拟建设弹出窗*/
     function clearRecommanAndBuild(){
         $(".park-pin").addClass('hide');    //隐藏大头针 P
         $(".build-window").addClass('hide');    //隐藏建设窗口
-        $('.build-window input').addClass('hide'); //隐藏建设按钮
+        $('.build-window input.build-confirm-btn').addClass('hide'); //隐藏建设按钮
         $(".build-window div.progress").addClass('hide'); //隐藏进度条
+        $(".recommand-way .progress").addClass('hide');
         $(".build-window .progress-bar").css({'width':0}); //进度条重置为0
+        $(".recommand-way .progress-bar").css({'width':0}); //进度条重置为0
+        $(".build-window select").attr('disabled',true);    //不可编辑状态
+        $(".build-window ul input").attr('disabled',true);
         $(".recommand-way").addClass('hide');   //隐藏推荐弹出窗口
         $(".build-window-confirm").addClass('hide'); //隐藏点击建设后的确认窗
     }
     $(rightBottomSetting).each(function (index) {
        $(this).on('click',function(){
            $(this).parent().next().html($(this).html());
+           for(var i=0; i<rightBottomSetting.length; i++)
+               $(rightBottomSetting[i]).removeClass('on');
+           $(this).addClass('on');
+           $(this).parent().slideUp('fast');
            if(index==1){
                clearRecommanAndBuild();
                $(recommandWay).removeClass('hide');
@@ -212,6 +272,8 @@ $(document).ready(function () {
                clearRecommanAndBuild();
                $('.park-pin').removeClass('hide');
                $('.build-window').removeClass('hide');
+               if($('.recommand-ranking p').hasClass('progress-btn-off'))
+                $('.recommand-ranking p').click();
            }
        });
     });
@@ -228,21 +290,25 @@ $(document).ready(function () {
         temp=temp*0.5;
         for(var i=0; i<redLine.length; i++)
             dataValue[i] = $(redLine[i]).data('value');
+        //进度条增加
+        $(".recommand-way .progress").removeClass('hide');
+        $(".recommand-way .progress-bar").animate({
+            width: '100%'
+        },500);
         /*绿色条增加*/
         $(greenLine).each(function(index){
             $(this).animate({
                 width: temp+'%'
-            },function(){
+            },500,function(){
                 /*回调函数 条中的数字变化*/
                 $(this).children('.progress-num').html($(this).width());
             });
-
         });
         /*红色条减小*/
         $(redLine).each(function(index){
             $(this).animate({
                 width: dataValue[index]-temp+'%'
-            },function(){
+            },500,function(){
                 $(this).children('.progress-num').html($(this).width());
             });
         });
@@ -251,7 +317,7 @@ $(document).ready(function () {
     /*左下角列表赋值*/
     !function () {
         var tempArray = [],
-            temp = $('.progress-num');
+            temp = $('.left-bottom-park .progress .progress-bar:first-child .progress-num');
         for(var i=temp.length-1; i>=0; i--){
             tempArray[i] = $(temp[i]).parent().width();
             tempArray[i]=$(window).width()*($($('.left-bottom-park')[1]).width()/100)
@@ -262,15 +328,20 @@ $(document).ready(function () {
         }
     }();
 
+    $(".progress-btn").hover(function(){
+        $(this).children('span').css({display: 'inline-block'});
+    }, function () {
+        $(this).children('span').css({display: 'none'});
+    });
     $(".progress-btn").on("click",function(){
-        $(this).toggleClass("progress-btn-on");
+        $(this).toggleClass("progress-btn-off");
         var progressBtnSpan = $(this).children('span');
         for(var i=0; i<progressBtnSpan.length; i++)
             $(progressBtnSpan[i]).toggleClass('hide');
-        if($(this).hasClass("progress-btn-on")){
-            $(this).children('i').removeClass("icon-plus").addClass("icon-minus");
-        } else {
+        if($(this).hasClass("progress-btn-off")){
             $(this).children('i').removeClass("icon-minus").addClass("icon-plus");
+        } else {
+            $(this).children('i').removeClass("icon-plus").addClass("icon-minus");
         }
         $(this).next("ul").stop(true,false).slideToggle();
     });
@@ -278,7 +349,14 @@ $(document).ready(function () {
     /*模拟建设相关*/
     /*可编辑状态切换*/
     $(".icon-pencil").on('click',function(){
-        $(this).siblings('input').toggleClass('hide');
+        if($(this).next().find('select').is(":disabled")){
+            $(this).next().find('select').attr('disabled',false);
+            $(".build-window ul input").attr('disabled',false);
+        } else {
+            $(this).next().find('select').attr('disabled', true);
+            $(".build-window ul input").attr('disabled',true);
+        }
+        $(this).siblings('input.build-confirm-btn').toggleClass('hide');
         $(".build-window .progress").addClass('hide');
         $(".build-window .progress-bar").css({'width':0});
     });

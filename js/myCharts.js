@@ -55,11 +55,11 @@ function createEarth(ec) {
     };
     myChart.setOption(earthOption);
 
-};
+}
 
-function createRadar(ec) {
+function createRadar() {
     // 左上角雷达图
-    var myRadar = ec.init(document.getElementById('radar-chart'));
+    var myRadar = echarts.init(document.getElementById('radar-chart'));
     myRadar.showLoading({
         text: 'Loading',
         effect: 'whirling',
@@ -126,8 +126,8 @@ function createRadar(ec) {
     window.onresize = myRadar.resize;
 };
 
-function createGauge(ec) {
-    var myGauge = ec.init(document.getElementById("car-bottom-board"));
+function createGauge() {
+    var myGauge = echarts.init(document.getElementById("car-bottom-board"));
     myGauge.showLoading({
         text: 'Loading',
         effect: 'whirling',
@@ -167,9 +167,9 @@ function createGauge(ec) {
     window.onresize = myGauge.resize;
 };
 
-function createPie(ec) {
-    var myPie1 = ec.init(document.getElementById("car-charts1"));
-    var myPie2 = ec.init(document.getElementById("car-charts2"));
+function createPie() {
+    var myPie1 = echarts.init(document.getElementById("car-charts1"));
+    var myPie2 = echarts.init(document.getElementById("car-charts2"));
 
     var myColor = ['#10C460', '#DE4949', '#CEC51A', '#16A2EF'];
 
